@@ -53,4 +53,4 @@ def latest_news_title(index_from_last: int = 1) -> str:
     if index_from_last > max_valid:
         index_from_last = max_valid
 
-    return matching_titles[-index_from_last]
+    return matching_titles[index_from_last - 1]
