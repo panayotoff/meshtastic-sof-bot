@@ -1,4 +1,4 @@
-# beatifsoup
+# SofBot
 
 A Meshtastic mesh network bot that responds to direct messages with news and weather information.
 
