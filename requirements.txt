@@ -7,10 +7,6 @@ lxml==6.0.2
 meshtastic==2.7.7
 packaging==24.2
 protobuf==6.33.4
-pyobjc-core==12.1
-pyobjc-framework-Cocoa==12.1
-pyobjc-framework-CoreBluetooth==12.1
-pyobjc-framework-libdispatch==12.1
 Pypubsub==4.0.7
 pyserial==3.5
 PyYAML==6.0.3
