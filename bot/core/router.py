@@ -2,6 +2,7 @@
 import re
 from bot.commands.news import latest_news_title
 from bot.commands.ping import handle_ping
+from bot.commands.pi_status import handle_pi_status
 from bot.commands.weather import handle_weather
 
 def dispatch(text: str) -> str:
@@ -26,4 +27,7 @@ def dispatch(text: str) -> str:
     if cmd == "weather":
         return handle_weather(args)
 
-    return "Unknown command. Try: ping, news [n], weather [tomorrow]"
+    if cmd == "pi" and args and args[0].lower() == "status":
+        return handle_pi_status(args[1:])
+
+    return "Unknown command. Try: ping, news [n], weather [tomorrow], pi status"

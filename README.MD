@@ -7,6 +7,7 @@ A Meshtastic mesh network bot that responds to direct messages with news and wea
 - **ping** -- Simple connectivity check (replies "pong")
 - **news [n]** -- Fetches latest headlines from Radio Svobodna Evropa (Bulgarian news)
 - **weather [tomorrow]** -- Fetches weather forecast for Sofia from Open-Meteo API
+- **pi status** -- Reports Raspberry Pi system stats (CPU temp, memory usage, CPU usage)
 
 All responses are transliterated from Cyrillic to Latin and truncated to 250 bytes to fit mesh radio constraints.
 
@@ -36,7 +37,8 @@ bot/
 ├── commands/
 │   ├── ping.py      # Ping command
 │   ├── news.py      # News fetching command
-│   └── weather.py   # Weather fetching command
+│   ├── weather.py   # Weather fetching command
+│   └── pi_status.py # Raspberry Pi system status
 └── core/
     ├── mesh.py      # Meshtastic device interface
     ├── router.py    # Command dispatcher
