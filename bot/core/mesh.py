@@ -12,6 +12,15 @@ def _ts() -> str:
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 
+# Current interface reference for commands that need mesh access
+_current_interface: Optional[SerialInterface] = None
+
+
+def get_interface() -> Optional[SerialInterface]:
+    """Get the current Meshtastic interface (if connected)."""
+    return _current_interface
+
+
 def run_bot_dm_only(on_message, dev_path: str | None = None):
     """
     Connects (USB serial), logs all received text messages.
@@ -30,8 +39,10 @@ def run_bot_dm_only(on_message, dev_path: str | None = None):
         my_node_num: Optional[int] = None
 
         try:
+            global _current_interface
             print(f"[{_ts()}] 🔌 Connecting… {dev_path or '(auto)'}")
             iface = SerialInterface(devPath=dev_path)
+            _current_interface = iface
 
             def on_connection_established(interface, **kwargs):
                 nonlocal my_node_num
@@ -120,6 +131,7 @@ def run_bot_dm_only(on_message, dev_path: str | None = None):
             try:
                 if iface:
                     iface.close()
+                _current_interface = None
             except Exception:
                 pass
 
