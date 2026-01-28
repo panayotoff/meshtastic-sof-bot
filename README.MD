@@ -2,6 +2,8 @@
 
 A Meshtastic mesh network bot that responds to direct messages with news and weather information.
 
+![Screenshot](screenshot.PNG)
+
 ## Features
 
 - **ping** -- Simple connectivity check (replies "pong")
