@@ -9,5 +9,6 @@ def handle_help(_: list[str]) -> str:
         "weather [tomorrow], "
         "pi status, "
         "nodes, "
+        "gpt <question>, "
         "help"
     )

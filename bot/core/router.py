@@ -1,5 +1,6 @@
 # bot/core/router.py
 import re
+from bot.commands.gpt import handle_gpt
 from bot.commands.help import handle_help
 from bot.commands.news import latest_news_title
 from bot.commands.nodes import handle_nodes
@@ -37,5 +38,8 @@ def dispatch(text: str) -> str:
 
     if cmd == "help":
         return handle_help(args)
+
+    if cmd == "gpt":
+        return handle_gpt(args)
 
     return "Unknown command. Send 'help' for available commands."

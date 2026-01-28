@@ -8,6 +8,7 @@ meshtastic==2.7.7
 packaging==24.2
 protobuf==6.33.4
 Pypubsub==4.0.7
+python-dotenv==1.0.1
 pyserial==3.5
 PyYAML==6.0.3
 requests==2.32.5
